@@ -6,7 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Cars</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.js"></script>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <style>
     * {
@@ -55,7 +63,7 @@
             <div class="overflow-hidden h-[90vh]">
                 <!-- Cars Card -->
                  <div class="p-2 backdrop-blur-lg bg-white/15 border-2 border-gray-700 rounded-lg mb-3">
-                    <div class="flex gap-2 bg-blue-200 w-fit items-center py-2 rounded-full px-3">
+                    <div class="flex gap-2 backdrop-blur-lg bg-gray-400 w-fit items-center py-2 rounded-full px-3">
                         <img src="assets/image/Vector.png" alt="">
                         <p class="text-[12px]">Dealer Terverifikasi</p>
                     </div>
@@ -65,7 +73,7 @@
                      </div>
                  </div>
                  <div class="p-2 backdrop-blur-lg bg-white/15 border-2 border-gray-700 rounded-lg mb-3">
-                    <div class="flex gap-2 bg-blue-200 w-fit items-center py-2 rounded-full px-3">
+                    <div class="flex gap-2 backdrop-blur-lg bg-gray-400 w-fit items-center py-2 rounded-full px-3">
                         <img src="assets/image/Vector.png" alt="">
                         <p class="text-[12px]">Dealer Terverifikasi</p>
                     </div>
@@ -75,7 +83,7 @@
                      </div>
                  </div>
                  <div class="p-2 backdrop-blur-lg bg-white/15 border-2 border-gray-700 rounded-lg mb-3">
-                    <div class="flex gap-2 bg-blue-200 w-fit items-center py-2 rounded-full px-3">
+                    <div class="flex gap-2 backdrop-blur-lg bg-gray-400 w-fit items-center py-2 rounded-full px-3">
                         <img src="assets/image/Vector.png" alt="">
                         <p class="text-[12px]">Dealer Terverifikasi</p>
                     </div>
@@ -85,7 +93,7 @@
                      </div>
                  </div>
                  <div class="p-2 backdrop-blur-lg bg-white/15 border-2 border-gray-700 rounded-lg mb-3">
-                    <div class="flex gap-2 bg-blue-200 w-fit items-center py-2 rounded-full px-3">
+                    <div class="flex gap-2 backdrop-blur-lg bg-gray-400 w-fit items-center py-2 rounded-full px-3">
                         <img src="assets/image/Vector.png" alt="">
                         <p class="text-[12px]">Dealer Terverifikasi</p>
                     </div>
@@ -97,6 +105,7 @@
             </div>
 
         </div>
+
         <!-- Merk Mobil -->
         <div class="relative translate-y-[-80px] w-[90%] mx-auto">
             <div class="p-5 bg-white rounded-t-lg flex gap-5">
@@ -122,9 +131,51 @@
         </div>
     </section>
 
-    <section class="h-[100vh] bg-white">
+    <!-- Section Statistik -->
+    <section class="h-[100vh] flex">
+
+        <div class="bg-blue-200 h-[50%] w-[90%] flex m-auto" style="background: url('assets/image/map.png');  background-position: center; background-size: contain;">
+            <div class="m-auto">
+                <h1 class="text-[72px] font-semibold">15K<span class="text-blue-500">+</span> </h1>
+                <P class="text-[32px] font-semibold text-gray-500">Mobil Terjual</P>
+            </div>
+            <div class="m-auto">
+                <h1 class="text-[72px] font-semibold">20K<span class="text-blue-500">+</span> </h1>
+                <P class="text-[32px] font-semibold text-gray-500">Brand</P>
+            </div>
+            <div class="m-auto">
+                <h1 class="text-[72px] font-semibold">150K<span class="text-blue-500">+</span> </h1>
+                <P class="text-[32px] font-semibold text-gray-500">Pelanggan</P>
+            </div>
+        </div>
 
     </section>
-</body>
 
+    <!-- Section Populer -->
+     <section class="h-fit pb-10">
+        <div class="container m-auto">
+            <div class="flex justify-between items-center py-10">
+                <h1 class="text-[44px] font-bold">Markas Terpopuler</h1>
+                <a href="" class="px-10 py-4 rounded-full border border-black font-bold hover:bg-slate-900 transition-all hover:text-white">See All &raquo;</a>
+            </div>
+
+            <div class="grid grid-cols-3" id="carContainer">
+                <!-- Card will be here-->
+            </div>
+        </div>
+     </section>
+
+     <!-- Section Map -->
+     <section class="h-[100vh] bg-[#090B0F]">
+        <div class="container m-auto">
+            <div class="flex justify-between items-center py-10 text-white">
+                <h1 class="text-[44px] font-bold">Dealer Resmi Dekat Anda</h1>
+                <a href="" class="px-10 py-4 rounded-full border border-white font-bold hover:bg-white transition-all hover:text-black">See All &raquo;</a>
+            </div>
+
+            <div id="map" class="h-96 rounded-md"></div>
+        </div>
+     </section>
+</body>
+<script src="assets/js/main.js"></script>
 </html>
